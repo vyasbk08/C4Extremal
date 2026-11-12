@@ -4,11 +4,9 @@ keywords = ["math"]
 defaultTargets = ["C4Extremal"]
 
 [leanOptions]
-pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+pp.unicode.fun = true
 relaxedAutoImplicit = false
 weak.linter.mathlibStandardSet = true
-# The header linter enforces Mathlib's copyright-header format, which is
-# only meant for files contributed to Mathlib itself — not for this project.
 weak.linter.style.header = false
 maxSynthPendingDepth = 3
 

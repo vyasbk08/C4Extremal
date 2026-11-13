@@ -51,8 +51,21 @@ The main theorems are `extremal3` … `extremal7` in
   compiler** (a much larger program than the kernel) — a strictly weaker
   guarantee: a compiler bug could, in principle, certify a false statement.
   `#print axioms` records this honestly: `extremal6` and `extremal7` depend
-  on an extra `native_decide` axiom. The full audit output is kept in a
-  comment at the bottom of `SmallCases.lean`.
+  on an extra `native_decide` axiom. The `#print axioms` commands at the
+  bottom of `SmallCases.lean` print the full audit on every build:
+
+  ```
+  'C4Extremal.extremal3' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'C4Extremal.extremal4' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'C4Extremal.extremal5' depends on axioms: [propext, Classical.choice, Quot.sound]
+  'C4Extremal.extremal6' depends on axioms: [propext, Classical.choice, Quot.sound,
+                                             maxCheck6._native.native_decide.ax_1_1]
+  'C4Extremal.extremal7' depends on axioms: [propext, Classical.choice, Quot.sound,
+                                             maxCheck7._native.native_decide.ax_1_1]
+  ```
+
+  (The `…_native.native_decide.ax_1_1` axioms are per-theorem wrappers for
+  the compiler-trust axiom `Lean.ofReduceBool`.)
 
 ## Building
 

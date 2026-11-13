@@ -134,8 +134,9 @@ Tactics used there:
   principle produce a wrong result. That is why `#print axioms` matters: it
   shows exactly which theorems carry this extra assumption.
 
-In this project `#print axioms` output is recorded in comments at the bottom
-of `SmallCases.lean`, and the README states which results are kernel-checked.
+In this project the `#print axioms` commands at the bottom of
+`SmallCases.lean` print the audit on every build, and the README records the
+output and states which results are kernel-checked.
 
 ## 8. Five questions an interviewer might ask
 
